@@ -54,7 +54,10 @@ jobs:
           
         # Activate the environment  
         conda activate promptflow  
-          
+        
+        # Install keyrings.alt to provide an alternative keyring backend  
+        pip install keyrings.alt
+        
         # Create and list PromptFlow connection  
         pf connection create --file ./azure_openai.yml --set api_key="73f07aee325f4c2dbc4b3edba631d738" api_base="https://mmoaiswc-01.openai.azure.com/"  
         pf connection list  
