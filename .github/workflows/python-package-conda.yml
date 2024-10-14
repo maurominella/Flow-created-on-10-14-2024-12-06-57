@@ -24,7 +24,7 @@ jobs:
         
     - name: List files and folders
       run: |
-        run:  ls -R . -ll
+        ls -R . -ll
         
     - name: Install dependencies
       run: |
