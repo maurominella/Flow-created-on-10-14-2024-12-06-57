@@ -44,4 +44,18 @@ jobs:
           
         # Lint the code  
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics  
-        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics  
+        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+
+
+    - name: Create a PromptFlow Connection  
+      run: |  
+        # Initialize conda by sourcing directly  
+        source $CONDA/etc/profile.d/conda.sh  
+          
+        # Activate the environment  
+        conda activate promptflow  
+          
+        # Create and list PromptFlow connection  
+        pf connection create --file ./azure_openai.yml --set api_key="73f07aee325f4c2dbc4b3edba631d738" api_base="https://mmoaiswc-01.openai.azure.com/"  
+        pf connection list  
+        pf connection show -n open_ai_connection  
