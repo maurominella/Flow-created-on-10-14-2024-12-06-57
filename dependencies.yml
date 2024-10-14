@@ -1,0 +1,12 @@
+name: promptflow
+
+dependencies:
+  - python=3.9
+  - pip
+  - pip:
+    - promptflow
+    - promptflow-core
+    - promptflow-tools
+    - promptflow-devkit
+    - promptflow-tracing
+    - promptflow-azure
